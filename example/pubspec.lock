@@ -489,10 +489,10 @@ packages:
     dependency: "direct dev"
     description:
       name: res_generator
-      sha256: b99049ae3e042f8a5ebfd6ab579ce693d5e7ffd50a052acca6521a448385feaf
+      sha256: d05711667323d247cf99442e2fd8056655321fdbc8129b74543ca477d450d79e
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.5"
+    version: "0.0.6"
   res_generator_annotation:
     dependency: "direct main"
     description:
