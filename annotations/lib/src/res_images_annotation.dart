@@ -1,4 +1,4 @@
-class AssetsImagesAnnotation {
+class ResImagesAnnotation {
   final String assetsDirectory;
   final String prefix;
   final String suffix;
@@ -7,7 +7,7 @@ class AssetsImagesAnnotation {
   /// need import 'package:flutter/material.dart';
   /// need import 'package:flutter_svg/flutter_svg.dart';
   /// for `SVG` | `JPG | PNG | GIF | JPEG` files
-  const AssetsImagesAnnotation({
+  const ResImagesAnnotation({
     /// example: assets/images/
     required this.assetsDirectory,
 
