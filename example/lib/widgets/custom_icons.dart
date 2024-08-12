@@ -1,4 +1,4 @@
-import 'package:annotations/annotations.dart';
+import 'package:assets_annotations/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

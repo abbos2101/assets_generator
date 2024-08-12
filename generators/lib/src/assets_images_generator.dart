@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 import 'package:analyzer/dart/element/element.dart';
-import 'package:annotations/annotations.dart';
+import 'package:assets_annotations/annotations.dart';
 import 'utils/model_visitor.dart';
 import 'utils/string_variable_extensions.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:annotations/annotations.dart';
+import 'package:assets_annotations/annotations.dart';
 
 part 'custom_images.g.dart';
 
