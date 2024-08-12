@@ -1,6 +1,6 @@
-name: assets_annotations
+name: res_generator_annotation
 description: For Assets(localizations, images, icons)
-version: 0.0.1
+version: 0.0.4
 repository: https://github.com/abbos2101/assets_generator/tree/main/annotations
 homepage: https://flutter.dev/
 topics: [ assets, generators, localization, images, icons ]
@@ -9,9 +9,5 @@ funding: [ https://github.com/sponsors/abbos2101 ]
 environment:
   sdk: '>=2.12.0 <4.0.0'
 
-dependencies:
-  flutter:
-    sdk: flutter
-
 dev_dependencies:
-  flutter_lints: ^4.0.0
+  lints: any

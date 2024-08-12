@@ -1,11 +1,11 @@
-class AssetsLocalesAnnotation {
+class ResWordsAnnotation {
   final String assetsDirectory;
   final List<String> supportedLocales;
   final String targetLocale;
   final String prefix;
 
   /// for localization generate. Need add pubspec.yaml `easy_localization` package
-  const AssetsLocalesAnnotation({
+  const ResWordsAnnotation({
     /// example: assets/tr/
     required this.assetsDirectory,
 
