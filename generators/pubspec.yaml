@@ -1,0 +1,21 @@
+name: generators
+description: "Assets Generator"
+version: 0.0.1
+homepage: none
+publish_to: none
+
+environment:
+  sdk: '>=2.12.0 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  build: ^2.4.1
+  source_gen: ^1.5.0
+  annotations:
+    path: ../annotations/
+
+dev_dependencies:
+  build_runner: ^2.4.11
+  flutter_lints: ^4.0.0

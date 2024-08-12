@@ -1,0 +1,15 @@
+name: annotations
+description: "Assets Annotations"
+version: 0.0.1
+homepage: none
+
+environment:
+  sdk: '>=2.12.0 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
