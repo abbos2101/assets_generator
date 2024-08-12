@@ -488,16 +488,18 @@ packages:
   res_generator:
     dependency: "direct dev"
     description:
-      path: "../generators"
-      relative: true
-    source: path
-    version: "0.0.4"
+      name: res_generator
+      sha256: b99049ae3e042f8a5ebfd6ab579ce693d5e7ffd50a052acca6521a448385feaf
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.5"
   res_generator_annotation:
     dependency: "direct main"
     description:
-      path: "../annotations"
-      relative: true
-    source: path
+      name: res_generator_annotation
+      sha256: eaad5716bab44d9bb6523fb88f426acfdf8c15a5beab6c3f53ab19cb57c6a724
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.4"
   shared_preferences:
     dependency: transitive
