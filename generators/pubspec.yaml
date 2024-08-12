@@ -1,12 +1,13 @@
-name: generators
-description: "Assets Generator"
+name: assets_generators
+description: For Assets(localizations, images, icons)
 version: 0.0.1
-homepage: none
-publish_to: none
+repository: https://github.com/abbos2101/assets_generator/tree/main/generators
+homepage: https://flutter.dev/
+topics: [ assets, generators, localization, images, icons ]
+funding: [ https://github.com/sponsors/abbos2101 ]
 
 environment:
   sdk: '>=2.12.0 <4.0.0'
-  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
