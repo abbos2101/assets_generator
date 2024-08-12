@@ -8,8 +8,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  assets_annotations:
-    path: ../annotations/
+  assets_annotations: ^0.1.1
   cupertino_icons: ^1.0.6
   easy_localization: ^3.0.6
   flutter_svg: ^2.0.10+1
@@ -17,8 +16,7 @@ dependencies:
 dev_dependencies:
   build_runner: ^2.4.11
   flutter_lints: ^4.0.0
-  assets_generators:
-    path: ../generators/
+  assets_generators: ^0.1.1
 
 flutter:
   uses-material-design: true
