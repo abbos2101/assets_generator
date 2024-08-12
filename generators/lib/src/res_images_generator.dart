@@ -6,8 +6,7 @@ import 'package:res_generator_annotation/res_generator_annotation.dart';
 import 'utils/model_visitor.dart';
 import 'utils/string_variable_extensions.dart';
 
-class ResImagesGenerator
-    extends GeneratorForAnnotation<ResImagesAnnotation> {
+class ResImagesGenerator extends GeneratorForAnnotation<ResImagesAnnotation> {
   @override
   String generateForAnnotatedElement(
     Element element,

@@ -11,6 +11,6 @@ Builder generateJsonMethods(BuilderOptions options) {
       ResImagesGenerator(),
       ResWordsGenerator(),
     ],
-    'assets_generator',
+    'res_generator',
   );
 }

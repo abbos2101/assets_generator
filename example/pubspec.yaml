@@ -11,12 +11,14 @@ dependencies:
   cupertino_icons: ^1.0.6
   easy_localization: ^3.0.6
   flutter_svg: ^2.0.10+1
-  res_generator_annotation: ^0.0.4
+  res_generator_annotation:
+    path: ../annotations
 
 dev_dependencies:
   build_runner: ^2.4.11
   flutter_lints: ^4.0.0
-  res_generator: ^0.0.4
+  res_generator:
+    path: ../generators
 
 flutter:
   uses-material-design: true

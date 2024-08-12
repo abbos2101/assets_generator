@@ -9,9 +9,11 @@ import 'utils/string_variable_extensions.dart';
 
 class ResWordsGenerator extends GeneratorForAnnotation<ResWordsAnnotation> {
   @override
-  String generateForAnnotatedElement(Element element,
-      ConstantReader annotation,
-      BuildStep buildStep,) {
+  String generateForAnnotatedElement(
+    Element element,
+    ConstantReader annotation,
+    BuildStep buildStep,
+  ) {
     final visitor = ModelVisitor();
     element.visitChildren(visitor);
     final className = visitor.className;
@@ -19,25 +21,18 @@ class ResWordsGenerator extends GeneratorForAnnotation<ResWordsAnnotation> {
         .read('supportedLocales')
         .listValue
         .map(
-          (e) =>
-          "$e"
+          (e) => "$e"
               .replaceAll("String", "")
               .replaceAll("(", "")
               .replaceAll(")", "")
               .replaceAll("'", "")
               .trim(),
-    )
+        )
         .toList();
-    final targetLocale = annotation
-        .read('targetLocale')
-        .stringValue;
-    final prefix = annotation
-        .read('prefix')
-        .stringValue;
+    final targetLocale = annotation.read('targetLocale').stringValue;
+    final prefix = annotation.read('prefix').stringValue;
 
-    final directoryPath = annotation
-        .read('assetsDirectory')
-        .stringValue;
+    final directoryPath = annotation.read('assetsDirectory').stringValue;
     if (!Directory(directoryPath).existsSync()) {
       log.warning('Directory $directoryPath does not exist.');
       return '';

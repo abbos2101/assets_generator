@@ -7,8 +7,7 @@
 
 
 # Assets generatsiya pakagelari uchun, bir marta ishlaydi faqat
-gen_assets:
-	dart run build_runner clean
+gen_res:
 	dart run build_runner build --delete-conflicting-outputs
 
 
