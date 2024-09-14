@@ -73,14 +73,7 @@ extension MyVariableString on String {
     return result;
   }
 
-  String cleanExtraElements() {
-    var text = this;
-    final index = text.lastIndexOf("\$");
-    if (index != -1 && index != 0) {
-      text = text.substring(0, index);
-    }
-    return text;
-  }
+  String removeExtraCharacters() => replaceAll(RegExp(r'[^a-zA-Z]'), '');
 
   String toKrill() {
     var s = this;

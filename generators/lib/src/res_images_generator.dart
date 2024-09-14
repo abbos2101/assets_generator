@@ -15,10 +15,8 @@ class ResImagesGenerator extends GeneratorForAnnotation<ResImagesAnnotation> {
   ) {
     final visitor = ModelVisitor();
     element.visitChildren(visitor);
-    final className = visitor.className;
+    final className = annotation.read('className').stringValue;
     final isSvg = annotation.read('isSvg').boolValue;
-    final prefix = annotation.read('prefix').stringValue;
-    final suffix = annotation.read('suffix').stringValue;
 
     // Use Directory instead of File
     final directoryPath = annotation.read('assetsDirectory').stringValue;
@@ -32,32 +30,23 @@ class ResImagesGenerator extends GeneratorForAnnotation<ResImagesAnnotation> {
     final buffer = StringBuffer();
     buffer.writeln(generateClass(
       className: className,
-      prefix: prefix,
-      suffix: suffix,
       directory: directory,
       isSvg: isSvg,
     ));
     buffer.writeln();
-    buffer.writeln(generateExtensions(
-      className: className,
-      prefix: prefix,
-      suffix: suffix,
-      isSvg: isSvg,
-    ));
+    buffer.writeln(generateExtensions(className: className, isSvg: isSvg));
 
     return buffer.toString();
   }
 
   String generateClass({
     required String className,
-    required String prefix,
-    required String suffix,
     required Directory directory,
     required bool isSvg,
   }) {
     final buffer = StringBuffer();
-    buffer.writeln('abstract class $prefix$className$suffix {');
-    buffer.writeln('const $prefix$className$suffix._();');
+    buffer.writeln('abstract class $className {');
+    buffer.writeln('const $className._();');
     buffer.writeln();
 
     final files = directory.listSync().whereType<File>();
@@ -78,14 +67,12 @@ class ResImagesGenerator extends GeneratorForAnnotation<ResImagesAnnotation> {
 
 String generateExtensions({
   required String className,
-  required String prefix,
-  required String suffix,
   required bool isSvg,
 }) {
   final buffer = StringBuffer();
   if (isSvg) {
     buffer.writeln("""
-extension ${prefix}Extension$className$suffix on SvgPicture {
+extension Extension$className on SvgPicture {
   SvgPicture copyWith({
     double? width,
     double? height,
@@ -108,7 +95,7 @@ extension ${prefix}Extension$className$suffix on SvgPicture {
   }
 
   buffer.writeln("""
-extension ${prefix}Extension$className$suffix on Image {
+extension Extension$className on Image {
   Image copyWith({
     double? width,
     double? height,

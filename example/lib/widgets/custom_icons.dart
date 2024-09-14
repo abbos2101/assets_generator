@@ -5,10 +5,8 @@ import 'package:res_generator_annotation/res_generator_annotation.dart';
 part 'custom_icons.g.dart';
 
 @ResImagesAnnotation(
+  className: 'CustomIcons',
   assetsDirectory: 'assets/icons/',
-  suffix: 'Gen',
   isSvg: true,
 )
-abstract class CustomIcons {
-  const CustomIcons._();
-}
+extension on String {}

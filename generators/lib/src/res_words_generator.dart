@@ -16,7 +16,8 @@ class ResWordsGenerator extends GeneratorForAnnotation<ResWordsAnnotation> {
   ) {
     final visitor = ModelVisitor();
     element.visitChildren(visitor);
-    final className = visitor.className;
+    //final className = visitor.className.removeExtraCharacters();
+    final className = annotation.read('className').stringValue;
     final supportLocales = annotation
         .read('supportedLocales')
         .listValue
@@ -30,7 +31,6 @@ class ResWordsGenerator extends GeneratorForAnnotation<ResWordsAnnotation> {
         )
         .toList();
     final targetLocale = annotation.read('targetLocale').stringValue;
-    final prefix = annotation.read('prefix').stringValue;
 
     final directoryPath = annotation.read('assetsDirectory').stringValue;
     if (!Directory(directoryPath).existsSync()) {
@@ -54,7 +54,6 @@ class ResWordsGenerator extends GeneratorForAnnotation<ResWordsAnnotation> {
     final buffer = StringBuffer();
     buffer.writeln(generateWords(
       className: className,
-      prefix: prefix,
       directoryPath: directoryPath,
       targetLocale: targetLocale,
     ));
@@ -116,13 +115,12 @@ class ResWordsGenerator extends GeneratorForAnnotation<ResWordsAnnotation> {
 
   String generateWords({
     required String className,
-    required String prefix,
     required String directoryPath,
     required String targetLocale,
   }) {
     final buffer = StringBuffer();
-    buffer.writeln('abstract class $prefix$className {');
-    buffer.writeln('const $prefix$className._();');
+    buffer.writeln('abstract class $className {');
+    buffer.writeln('const $className._();');
     buffer.writeln();
 
     final file = File('$directoryPath/$targetLocale.json');

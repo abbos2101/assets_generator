@@ -44,14 +44,14 @@ class _ExamplePageState extends State<ExamplePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppWords.appName.genTr())),
+      appBar: AppBar(title: Text(Words.appName.genTr())),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           context.setLocale(context.locale == const Locale('uz')
               ? const Locale('en')
               : const Locale('uz'));
         },
-        child: CustomIconsGen.world.copyWith(
+        child: CustomIcons.world.copyWith(
           width: 24,
           colorFilter: const ColorFilter.mode(
             Colors.blueAccent,
@@ -66,31 +66,32 @@ class _ExamplePageState extends State<ExamplePage> {
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                CustomIconsGen.cancel.copyWith(width: 24),
+                CustomIcons.cancel.copyWith(width: 24),
                 const SizedBox(width: 8),
-                Text(AppWords.cancel.genTr()),
+                Text(Words.cancel.genTr()),
               ],
             ),
             const SizedBox(height: 8),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                CustomIconsGen.delete.copyWith(width: 24),
+                CustomIcons.delete.copyWith(width: 24),
                 const SizedBox(width: 8),
-                Text(AppWords.delete.genTr()),
+                Text(Words.delete.genTr()),
               ],
             ),
             const SizedBox(height: 8),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                CustomImagesGen.cat.copyWith(width: 24),
+                CustomImages.cat.copyWith(width: 24),
                 const SizedBox(width: 8),
-                Text(AppWords.cat.genTr()),
+                Text(Words.cat.genTr()),
               ],
             ),
             const SizedBox(height: 8),
-            CustomImagesGen.catGif.copyWith(width: 200),
+            CustomImages.catGif.copyWith(width: 200),
+            CustomImages.image1.copyWith(width: 200),
           ],
         ),
       ),
