@@ -488,10 +488,11 @@ packages:
   res_generator:
     dependency: "direct dev"
     description:
-      path: "../generators"
-      relative: true
-    source: path
-    version: "0.0.7"
+      name: res_generator
+      sha256: "5417b6a6969339eec45f6d55768055e6b8c7758caeda48365ff2660849a42533"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.0"
   res_generator_annotation:
     dependency: "direct main"
     description:
@@ -576,14 +577,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
-  source_gen:
-    dependency: transitive
-    description:
-      name: source_gen
-      sha256: "14658ba5f669685cd3d63701d01b31ea748310f7ab854e471962670abcf57832"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.5.0"
   source_span:
     dependency: transitive
     description:
