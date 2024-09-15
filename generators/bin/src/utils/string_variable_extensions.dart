@@ -9,10 +9,17 @@ extension MyVariableString on String {
 
   String get name {
     final index = lastIndexOf("/");
+    final index2 = lastIndexOf(".");
     if (index != -1) {
-      return substring(index + 1, indexOf("."));
+      if (index2 != -1) {
+        return substring(index + 1, index2);
+      }
+      return substring(index + 1);
     }
-    return this;
+    if (index2 != -1) {
+      return substring(0, index2);
+    }
+    return substring(0);
   }
 
   String toCamelCase() {
@@ -73,15 +80,7 @@ extension MyVariableString on String {
     return result;
   }
 
-  String removeExtraCharacters() => replaceAll(RegExp(r'[^a-zA-Z]'), '');
-
-  String toKrill() {
-    var s = this;
-    for (int i = 0; i < _words.length; i++) {
-      s = s.replaceAll(_words[i].uz, _words[i].ru);
-    }
-    return s;
-  }
+  String removeExtraSpaces() => replaceAll(RegExp(r'\s+'), ' ').trim();
 
   bool _hasLowerCase() {
     for (int i = 0; i < length; i++) {
@@ -91,59 +90,4 @@ extension MyVariableString on String {
     }
     return false;
   }
-}
-
-extension MyList on List {
-  void addUnique(dynamic value) {
-    for (int i = 0; i < length; i++) {
-      if (this[i] == value) return;
-    }
-    add(value);
-  }
-}
-
-const _words = <_WordModel>[
-  _WordModel(ru: "ш", uz: "sh"),
-  _WordModel(ru: "щ", uz: "sha"),
-  _WordModel(ru: "ч", uz: "ch"),
-  _WordModel(ru: "ў", uz: "o'"),
-  _WordModel(ru: "ғ", uz: "g'"),
-  _WordModel(ru: "ц", uz: "s"),
-  _WordModel(ru: "я", uz: "ya"),
-  _WordModel(ru: "ё", uz: "yo"),
-  _WordModel(ru: "ю", uz: "yu"),
-  _WordModel(ru: "ъ", uz: "'"),
-  _WordModel(ru: "ы", uz: ""),
-  _WordModel(ru: "ь", uz: ""),
-  _WordModel(ru: "а", uz: "a"),
-  _WordModel(ru: "б", uz: "b"),
-  _WordModel(ru: "д", uz: "d"),
-  _WordModel(ru: "э", uz: "e"),
-  _WordModel(ru: "ф", uz: "f"),
-  _WordModel(ru: "г", uz: "g"),
-  _WordModel(ru: "ҳ", uz: "h"),
-  _WordModel(ru: "и", uz: "i"),
-  _WordModel(ru: "ж", uz: "j"),
-  _WordModel(ru: "к", uz: "k"),
-  _WordModel(ru: "л", uz: "l"),
-  _WordModel(ru: "м", uz: "m"),
-  _WordModel(ru: "н", uz: "n"),
-  _WordModel(ru: "о", uz: "o"),
-  _WordModel(ru: "п", uz: "p"),
-  _WordModel(ru: "қ", uz: "q"),
-  _WordModel(ru: "р", uz: "r"),
-  _WordModel(ru: "с", uz: "s"),
-  _WordModel(ru: "т", uz: "t"),
-  _WordModel(ru: "у", uz: "u"),
-  _WordModel(ru: "й", uz: "y"),
-  _WordModel(ru: "х", uz: "x"),
-  _WordModel(ru: "в", uz: "v"),
-  _WordModel(ru: "з", uz: "z"),
-];
-
-class _WordModel {
-  final String ru;
-  final String uz;
-
-  const _WordModel({required this.ru, required this.uz});
 }

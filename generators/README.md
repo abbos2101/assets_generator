@@ -1,14 +1,45 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# ResGenerator
+<?code-excerpt path-base="example/lib"?>
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+[![pub package](https://img.shields.io/pub/v/res_generator.svg)](https://pub.dev/packages/res_generator)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+This is a generator for image, icon and words in package assets.
 
-Score...!
+## Usage
+
+Create `res_generator.yaml` in the project folder, under the line `pupspec.yaml`. This file contains the configurations. Change it to suit yourself. It has words, icons, images, if you don't need them, don't add them, just add the ones you need with all their properties.
+
+#### res_generator.yaml
+<?code-excerpt "readme_excerpts.dart (Write)"?>
+```dart
+words:
+  assets_directory: assets/tr/
+  class_directory: lib/core/common/words/
+  class_file: words.dart
+  class_name: Words
+  supported_locales: [ 'uz', 'en' ]
+  target_locale: 'uz'
+
+icons:
+  assets_directory: assets/icons/
+  class_directory: lib/widgets/
+  class_file: custom_icons.dart
+  class_name: CustomIcons
+
+images:
+  assets_directory: assets/images/
+  class_directory: lib/widgets/
+  class_file: custom_images.dart
+  class_name: CustomImages
+```
+
+### run command for terminal
+<?code-excerpt "readme_excerpts.dart (Write)"?>
+```dart
+dart run res_generator:generate
+```
+
+## Extra info
+
+`*.dart` and `*.g.dart` files are created.
+You can change `*.dart` to these, example given. And don't make changes to `*.g.dart` it will be generated.

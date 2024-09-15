@@ -22,6 +22,7 @@ dev_dependencies:
   res_generator:
     path: ../generators
 
+
 flutter:
   uses-material-design: true
   assets:
