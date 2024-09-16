@@ -96,14 +96,7 @@ extension Extension$className on Image {
     );
   }
 
-  String get path {
-    final path = "\$image";
-    const key = ', name: "';
-    if (path.contains(key)) {
-      return path.substring(path.indexOf(key) + key.length, path.length - 2);
-    }
-    return "";
-  }
+  String get path => (this.image as AssetImage).assetName;
 }
 """);
   return buffer.toString();

@@ -93,7 +93,7 @@ extension Extension$className on SvgPicture {
     );
   }
   
-  String get path => "\$bytesLoader".substring(15, "\$bytesLoader".length - 1);
+  String get path => (this.bytesLoader as SvgAssetLoader).assetName;
 }
 """);
   return buffer.toString();

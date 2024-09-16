@@ -1,3 +1,7 @@
+## 0.1.2
+* remove icons2, images2
+* hot fix bug with path
+
 ## 0.1.1
 * add icons2, images2 for temporary assets or other cases
 

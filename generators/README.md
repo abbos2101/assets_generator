@@ -31,18 +31,6 @@ images:
   class_directory: lib/widgets/
   class_file: custom_images.dart
   class_name: CustomImages
-
-icons2:
-  assets_directory: assets/temp_icons/
-  class_directory: lib/widgets/
-  class_file: custom_icons.dart
-  class_name: CustomTempIcons
-
-images2:
-  assets_directory: assets/temp_images/
-  class_directory: lib/widgets/
-  class_file: custom_images.dart
-  class_name: CustomTempImages
 ```
 
 ### add `pubspec.yaml`
