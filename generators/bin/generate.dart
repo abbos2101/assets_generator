@@ -9,6 +9,8 @@ void main() {
   final json = loadYaml(string);
   ImageHelper.fromJson(json['images']).generate();
   IconHelper.fromJson(json['icons']).generate();
+  ImageHelper.fromJson(json['images2']).generate();
+  IconHelper.fromJson(json['icons2']).generate();
   WordHelper.fromJson(json['words']).generate();
   print('');
   print('-= Finished =-');

@@ -1,3 +1,6 @@
+## 0.1.1
+* add icons2, images2 for temporary assets or other cases
+
 ## 0.1.0
 * remove dependencies of res_generator_annotations and build_runner packages
 * add custom generator `dart run res_generator:generate`

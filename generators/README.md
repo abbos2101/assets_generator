@@ -13,24 +13,36 @@ Create `res_generator.yaml` in the project folder, under the line `pupspec.yaml`
 <?code-excerpt "readme_excerpts.dart (Write)"?>
 ```dart
 words:
-assets_directory: assets/tr/
-class_directory: lib/core/common/words/
-class_file: words.dart
-class_name: Words
-supported_locales: [ 'uz', 'en' ]
-target_locale: 'uz'
+  assets_directory: assets/tr/
+  class_directory: lib/core/common/words/
+  class_file: words.dart
+  class_name: Words
+  supported_locales: [ 'uz', 'en' ]
+  target_locale: 'uz'
 
 icons:
-assets_directory: assets/icons/
-class_directory: lib/widgets/
-class_file: custom_icons.dart
-class_name: CustomIcons
+  assets_directory: assets/icons/
+  class_directory: lib/widgets/
+  class_file: custom_icons.dart
+  class_name: CustomIcons
 
 images:
-assets_directory: assets/images/
-class_directory: lib/widgets/
-class_file: custom_images.dart
-class_name: CustomImages
+  assets_directory: assets/images/
+  class_directory: lib/widgets/
+  class_file: custom_images.dart
+  class_name: CustomImages
+
+icons2:
+  assets_directory: assets/temp_icons/
+  class_directory: lib/widgets/
+  class_file: custom_icons.dart
+  class_name: CustomTempIcons
+
+images2:
+  assets_directory: assets/temp_images/
+  class_directory: lib/widgets/
+  class_file: custom_images.dart
+  class_name: CustomTempImages
 ```
 
 ### add `pubspec.yaml`
