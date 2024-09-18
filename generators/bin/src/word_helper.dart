@@ -76,7 +76,7 @@ class WordHelper {
     );
 
     final filePart = File('$classDirectory${classFile.name}.dart');
-    final filePartOf = File('$classDirectory${classFile.name}.g.dart');
+    final filePartOf = File('$classDirectory${classFile.name}.res.dart');
 
     if (!filePart.existsSync()) {
       filePart.writeAsStringSync(strPart);
@@ -87,11 +87,11 @@ class WordHelper {
       if (filePartOf.readAsStringSync().removeExtraSpaces() !=
           strPartOf.removeExtraSpaces()) {
         filePartOf.writeAsStringSync(strPartOf);
-        print('${className.name}.g.dart has been updated.');
+        print('${className.name}.res.dart has been updated.');
       }
     } else {
       filePartOf.writeAsStringSync(strPartOf);
-      print('${className.name}.g.dart has been created.');
+      print('${className.name}.res.dart has been created.');
     }
   }
 

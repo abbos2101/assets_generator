@@ -9,7 +9,7 @@ String stringPart({
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-part '$classFileName.g.dart';
+part '$classFileName.res.dart';
 
 /// To view images, to be easy to search
 /// You can add any changes

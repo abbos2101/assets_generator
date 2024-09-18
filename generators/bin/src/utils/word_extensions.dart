@@ -22,7 +22,7 @@ String stringPart({
   return """
 import 'package:easy_localization/easy_localization.dart';
 
-part '$classFileName.g.dart';
+part '$classFileName.res.dart';
 
 /// You can change code and method names
 /// use any package for example easy_localization

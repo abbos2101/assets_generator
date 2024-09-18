@@ -8,7 +8,7 @@ String stringPart({
   var string = """
 import 'package:flutter/material.dart';
 
-part '$classFileName.g.dart';
+part '$classFileName.res.dart';
 
 /// To view images, to be easy to search
 /// You can add any changes

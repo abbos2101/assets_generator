@@ -1,6 +1,6 @@
 name: res_generator
 description: For Assets(localizations, images, icons)
-version: 0.1.2
+version: 0.1.3
 repository: https://github.com/abbos2101/assets_generator/tree/main/generators
 homepage: https://flutter.dev/
 topics: [ assets, generators, localization, images, icons ]
