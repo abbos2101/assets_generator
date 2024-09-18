@@ -1,6 +1,7 @@
-## 0.1.3
+## 0.1.4
 
 * hot fix bug with json_serializer conflict
+* remove build_runner dependency
 
 ## 0.1.2
 
