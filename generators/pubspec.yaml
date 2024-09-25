@@ -1,6 +1,6 @@
 name: res_generator
-description: For Assets(localizations, images, icons)
-version: 0.1.4
+description: For Assets generator and translator (localizations, images, icons)
+version: 0.1.5
 repository: https://github.com/abbos2101/assets_generator/tree/main/generators
 homepage: https://flutter.dev/
 topics: [ assets, generators, localization, images, icons ]
@@ -10,4 +10,5 @@ environment:
   sdk: '>=2.12.0 <4.0.0'
 
 dependencies:
+  translator: ^1.0.0
   yaml: ^3.1.2

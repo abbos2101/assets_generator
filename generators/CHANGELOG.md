@@ -1,3 +1,8 @@
+## 0.1.5
+
+* add google translate for generate locale
+* use translate command `dart run res_generator:translate`
+
 ## 0.1.4
 
 * hot fix bug with json_serializer conflict
