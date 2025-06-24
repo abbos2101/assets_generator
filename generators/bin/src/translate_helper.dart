@@ -7,12 +7,12 @@ import 'utils/string_variable_extensions.dart';
 
 class TranslateHelper {
   final String assetsDirectory;
-  final List<String> supportedLocales;
+  final List<String> translatedLocales;
   final String targetLocale;
 
   const TranslateHelper._({
     this.assetsDirectory = '',
-    this.supportedLocales = const [],
+    this.translatedLocales = const [],
     this.targetLocale = '',
   });
 
@@ -20,15 +20,16 @@ class TranslateHelper {
     if (json == null) return TranslateHelper._();
     return TranslateHelper._(
       assetsDirectory: json['assets_directory'] ?? '',
-      supportedLocales:
-          ((json['supported_locales'] ?? []) as List).map((e) => '$e').toList(),
+      translatedLocales: ((json['translated_locales'] ?? []) as List)
+          .map((e) => '$e')
+          .toList(),
       targetLocale: json['target_locale'] ?? '',
     );
   }
 
   Future<void> generate() async {
     if (assetsDirectory.isNotEmpty &&
-        supportedLocales.isNotEmpty &&
+        translatedLocales.isNotEmpty &&
         targetLocale.isNotEmpty) {
       final assetsDir = Directory(assetsDirectory);
       if (!assetsDir.existsSync()) {
@@ -38,7 +39,7 @@ class TranslateHelper {
 
       if (isCheckSafe(
         assetsDirectory: assetsDirectory,
-        supportedLocales: supportedLocales,
+        locales: translatedLocales,
       )) {
         print('Start');
         await _writeLocales();
@@ -54,8 +55,8 @@ class TranslateHelper {
     final targetJson = jsonDecode(targetString) as Map;
     final keys = targetJson.keys.toList();
     keys.sort();
-    for (int i = 0; i < supportedLocales.length; i++) {
-      final file = File('$assetsDirectory${supportedLocales[i]}.json');
+    for (int i = 0; i < translatedLocales.length; i++) {
+      final file = File('$assetsDirectory${translatedLocales[i]}.json');
       final string = file.readAsStringSync();
       final json = jsonDecode(string);
       final map = <String, String>{};
@@ -66,7 +67,7 @@ class TranslateHelper {
           final translated = await translator.translate(
             targetJson[key] ?? '',
             from: targetLocale,
-            to: supportedLocales[i],
+            to: translatedLocales[i],
           );
           map[key] = translated.text;
         } else {

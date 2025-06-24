@@ -4,11 +4,11 @@ import 'string_variable_extensions.dart';
 
 bool isCheckSafe({
   required String assetsDirectory,
-  required List<String> supportedLocales,
+  required List<String> locales,
 }) {
-  for (int i = 0; i < supportedLocales.length; i++) {
-    if (!File('$assetsDirectory${supportedLocales[i]}.json').existsSync()) {
-      print('File $assetsDirectory${supportedLocales[i]}.json does not exist.');
+  for (int i = 0; i < locales.length; i++) {
+    if (!File('$assetsDirectory${locales[i]}.json').existsSync()) {
+      print('File $assetsDirectory${locales[i]}.json does not exist.');
       return false;
     }
   }
@@ -26,9 +26,9 @@ part '$classFileName.res.dart';
 
 /// You can change code and method names
 /// use any package for example easy_localization
-/// use $className.hello.str() or str($className.hello)
+/// use $className.hello.str or str($className.hello)
 extension MyString on String {
-  String str() => this.tr();
+  String get str => this.tr();
 }
 
 String str(String key) => key.tr();

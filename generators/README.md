@@ -18,19 +18,20 @@ words:
   class_file: words.dart
   class_name: Words
   supported_locales: [ 'uz', 'en' ]
+  translated_locales: [ 'uz', 'en' ]
   target_locale: 'uz'
 
 icons:
   assets_directory: assets/icons/
   class_directory: lib/widgets/
-  class_file: custom_icons.dart
-  class_name: CustomIcons
+  class_file: app_icons.dart
+  class_name: AppIcons
 
 images:
   assets_directory: assets/images/
   class_directory: lib/widgets/
-  class_file: custom_images.dart
-  class_name: CustomImages
+  class_file: app_images.dart
+  class_name: AppImages
 ```
 
 ### add `pubspec.yaml`

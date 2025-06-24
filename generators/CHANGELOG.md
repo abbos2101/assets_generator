@@ -1,3 +1,9 @@
+## 1.0.0
+
+* add translateLocales for some bad locales[remove bad locales on translate]
+* update pubspec.yaml
+* update docs
+
 ## 0.1.5
 
 * add google translate for generate locale

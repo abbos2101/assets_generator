@@ -54,7 +54,7 @@ class WordHelper {
       }
       if (isCheckSafe(
         assetsDirectory: assetsDirectory,
-        supportedLocales: supportedLocales,
+        locales: supportedLocales,
       )) {
         _writePartAndParOf();
         _writeLocales();
