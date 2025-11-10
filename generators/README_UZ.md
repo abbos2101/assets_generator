@@ -7,13 +7,13 @@ Rasm, icon va lokalizatsiya uchun o'rnatilgan tarjima qo'llab-quvvatlashli Flutt
 <br>
 ---
 
-**[English](https://github.com/abbos2101/res_generator#readme)** | **[O'zbekcha](https://github.com/abbos2101/res_generator/blob/main/README_UZ.md)**
+**[English](https://github.com/abbos2101/assets_generator/blob/main/generators/README.md)** | **[O'zbekcha](https://github.com/abbos2101/assets_generator/blob/main/generators/README_UZ.md)**
 
 ---
 
 <br>
 
-![Foydalanish](https://raw.githubusercontent.com/abbos2101/res_generator/main/assets/use-case-uz.png)
+![Foydalanish](https://raw.githubusercontent.com/abbos2101/assets_generator/refs/heads/main/generators/assets/use-case-uz.png)
 
 ## Xususiyatlar
 
