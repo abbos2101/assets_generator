@@ -4,9 +4,16 @@
 
 Rasm, icon va lokalizatsiya uchun o'rnatilgan tarjima qo'llab-quvvatlashli Flutter kod generatori.
 
-**[Read in English](README.md)** | **[O'zbekcha o'qish](README_UZ.md)**
+<br>
+---
 
-![Foydalanish](assets/use-case-uz.png)
+**[English](https://github.com/abbos2101/res_generator#readme)** | **[O'zbekcha](https://github.com/abbos2101/res_generator/blob/main/README_UZ.md)**
+
+---
+
+<br>
+
+![Foydalanish](https://raw.githubusercontent.com/abbos2101/res_generator/main/assets/use-case-uz.png)
 
 ## Xususiyatlar
 

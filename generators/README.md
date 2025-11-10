@@ -4,9 +4,16 @@
 
 A Flutter code generator for images, icons, and localization with built-in translation support.
 
-**[Read in English](README.md)** | **[O'zbekcha o'qish](README_UZ.md)**
+<br>
+---
 
-![Use Case](assets/use-case-en.png)
+**[English](https://github.com/abbos2101/res_generator#readme)** | **[O'zbekcha](https://github.com/abbos2101/res_generator/blob/main/README_UZ.md)**
+
+---
+
+<br>
+
+![Use Case](https://raw.githubusercontent.com/abbos2101/res_generator/main/assets/use-case-en.png)
 
 ## Features
 
