@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
+
 import 'package:translator/translator.dart';
 
-import 'utils/word_extensions.dart';
 import 'utils/string_variable_extensions.dart';
+import 'utils/word_extensions.dart';
 
 class TranslateHelper {
   final String assetsDirectory;
@@ -66,8 +67,8 @@ class TranslateHelper {
         if (value.isEmpty) {
           final translated = await translator.translate(
             targetJson[key] ?? '',
-            from: targetLocale,
-            to: translatedLocales[i],
+            from: targetLocale.toLang(),
+            to: translatedLocales[i].toLang(),
           );
           map[key] = translated.text;
         } else {
@@ -80,4 +81,8 @@ class TranslateHelper {
       }
     }
   }
+}
+
+extension on String {
+  String toLang() => split('-').first.toLowerCase();
 }

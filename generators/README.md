@@ -1,25 +1,41 @@
 # ResGenerator
-<?code-excerpt path-base="example/lib"?>
 
 [![pub package](https://img.shields.io/pub/v/res_generator.svg)](https://pub.dev/packages/res_generator)
 
-This is a generator and translator for image, icon and words in package assets.
+A Flutter code generator for images, icons, and localization with built-in translation support.
 
-## Usage
+**[Read in English](README.md)** | **[O'zbekcha o'qish](README_UZ.md)**
 
-Create `res_generator.yaml` in the project folder, under the line `pupspec.yaml`. This file contains the configurations. Change it to suit yourself. It has words, icons, images, if you don't need them, don't add them, just add the ones you need with all their properties.
+![Use Case](assets/use-case-en.png)
 
-#### res_generator.yaml
-<?code-excerpt "readme_excerpts.dart (Write)"?>
-```dart
+## Features
+
+- ✅ Auto-generate Dart classes from SVG icons and PNG/JPG images
+- ✅ Generate and translate localization files automatically
+- ✅ Seamless integration with `easy_localization` and similar packages
+- ✅ Type-safe resource access
+- ✅ Convenient `copyWith` methods for customization
+
+## Installation
+
+Add to your `pubspec.yaml`:
+```yaml
+dev_dependencies:
+  res_generator: ^version
+```
+
+## Configuration
+
+Create `res_generator.yaml` in your project root (next to `pubspec.yaml`):
+```yaml
 words:
   assets_directory: assets/tr/
   class_directory: lib/core/common/words/
   class_file: words.dart
   class_name: Words
-  supported_locales: [ 'uz', 'en' ]
-  translated_locales: [ 'uz', 'en' ]
-  target_locale: 'uz'
+  supported_locales: ['uz', 'en', 'ru']  # or ['uz-UZ', 'en-EN', 'ru-RU']
+  translated_locales: ['en', 'ru']        # locales to translate
+  target_locale: 'uz'                     # source locale
 
 icons:
   assets_directory: assets/icons/
@@ -34,26 +50,71 @@ images:
   class_name: AppImages
 ```
 
-### add `pubspec.yaml`
-<?code-excerpt "readme_excerpts.dart (Write)"?>
-```dart
-dev_dependencies:
-  res_generator: ^version
-```
+## Usage
 
-### run command for generate resource(image, icon, words) in terminal
-<?code-excerpt "readme_excerpts.dart (Write)"?>
-```dart
+### Generate Resources
+```bash
 dart run res_generator:generate
 ```
 
-### run command for translate resource(words) in terminal
-<?code-excerpt "readme_excerpts.dart (Write)"?>
-```dart
+### Translate Localization
+```bash
 dart run res_generator:translate
 ```
 
-## Extra info
+## Code Examples
 
-`*.dart` and `*.res.dart` files are created.
-You can change `*.dart` to these, example given. And don't make changes to `*.res.dart` it will be generated.
+### Icons
+```dart
+// Simple usage
+Scaffold(body: AppIcons.logo)
+
+// With customization
+AppIcons.logo.copyWith(
+  width: 24,
+  height: 24,
+  fit: BoxFit.fill,
+  colorFilter: ColorFilter.mode(Colors.blue, BlendMode.srcIn),
+)
+
+// Using path directly
+SvgPicture.asset(AppIcons.logo.path)
+```
+
+### Images
+```dart
+// Simple usage
+Scaffold(body: AppImages.splash)
+
+// With customization
+AppImages.splash.copyWith(
+  width: double.infinity,
+  height: double.infinity,
+  fit: BoxFit.cover,
+)
+
+// Using path directly
+Image.asset(AppImages.splash.path)
+```
+
+### Localization
+```dart
+// Method 1 # Recommended for static words
+Text(Words.documents.str)
+
+// Method 2 # Recommended for dynamic words
+Text("documents".str)
+
+// Method 3
+Text(str(Words.documents))
+
+// Method 4
+Text(str("documents"))
+```
+
+## Generated Files
+
+The generator creates two types of files:
+
+- `*.dart` - Safe to modify for customization
+- `*.res.dart` - Auto-generated, do not modify (will be overwritten)

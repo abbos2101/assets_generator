@@ -1,3 +1,13 @@
+## 1.0.2
+
+* add readme
+* fix translate bug(with country code)
+
+
+## 1.0.1
+
+* upgrade
+
 ## 1.0.0
 
 * add translateLocales for some bad locales[remove bad locales on translate]
