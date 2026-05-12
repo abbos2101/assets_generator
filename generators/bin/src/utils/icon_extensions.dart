@@ -83,6 +83,7 @@ extension Extension$className on SvgPicture {
     double? height,
     BoxFit? fit,
     ColorFilter? colorFilter,
+    AlignmentGeometry? alignment,
   }) {
     return SvgPicture.asset(
       path,
@@ -90,6 +91,7 @@ extension Extension$className on SvgPicture {
       height: height ?? this.height,
       fit: fit ?? this.fit,
       colorFilter: colorFilter ?? this.colorFilter,
+      alignment: alignment ?? this.alignment,
     );
   }
   

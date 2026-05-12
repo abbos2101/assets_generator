@@ -86,6 +86,7 @@ extension Extension$className on Image {
     double? height,
     BoxFit? fit,
     Color? color,
+    AlignmentGeometry? alignment,
   }) {
     return Image(
       image: image,
@@ -93,6 +94,7 @@ extension Extension$className on Image {
       height: height ?? this.height,
       fit: fit ?? this.fit,
       color: color ?? this.color,
+      alignment: alignment ?? this.alignment,
     );
   }
 
