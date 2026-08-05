@@ -1,3 +1,9 @@
+## 1.1.0
+* fix `toSnakeCase()`: any separator (space, `-`, `.`, `/`, etc.) is now normalized to `_`
+* support localization keys with spaces, e.g. `"Add product"` now generates `addProduct`
+* `toCamelCase()` / `toPascalCase()` now prefix a `$` when the result would start with a digit (invalid Dart identifier)
+* fix icon/image variable names for files with multiple dots, e.g. `logo.dark.svg` now generates `logoDark`
+
 ## 1.0.5
 * add alignment parameter to extensions `copyWith`
  

@@ -23,7 +23,7 @@ extension MyVariableString on String {
   }
 
   String toCamelCase() {
-    var data = replaceAll('.', '_').toSnakeCase();
+    final data = toSnakeCase();
     if (data.isEmpty) return "";
     var result = "";
     for (int i = 0; i < data.length; i++) {
@@ -33,11 +33,16 @@ extension MyVariableString on String {
       }
       result += temp;
     }
-    return result.replaceAll("_", "");
+    result = result.replaceAll("_", "");
+    // Dart identifikatori raqam bilan boshlana olmaydi
+    if (result.isNotEmpty && RegExp(r'[0-9]').hasMatch(result[0])) {
+      result = "\$$result";
+    }
+    return result;
   }
 
   String toPascalCase() {
-    var data = replaceAll('.', '_').toSnakeCase();
+    var data = toSnakeCase();
     if (data.isEmpty) return "";
     data = "${data[0].toUpperCase()}${data.substring(1)}";
     var result = "";
@@ -48,43 +53,43 @@ extension MyVariableString on String {
       }
       result += temp;
     }
-    return result.replaceAll("_", "");
+    result = result.replaceAll("_", "");
+    if (result.isNotEmpty && RegExp(r'[0-9]').hasMatch(result[0])) {
+      result = "\$$result";
+    }
+    return result;
   }
 
   String toSnakeCase() {
+    // 1. Har qanday ajratuvchini (bo'sh joy, -, ., /, va h.k.) "_" ga keltiramiz
+    var source = replaceAll(RegExp(r'[^A-Za-z0-9]+'), '_');
+
+    // 2. camelCase / PascalCase chegaralarini ajratamiz (faqat aralash holatda)
     var data = "";
-    var result = "";
-
-    if (!_hasLowerCase()) {
-      return toLowerCase();
-    }
-
-    for (int i = 0; i < length; i++) {
-      if (RegExp(r'^[A-Z]').hasMatch(this[i])) {
-        data += "_";
+    if (source._hasLowerCase()) {
+      for (int i = 0; i < source.length; i++) {
+        if (RegExp(r'[A-Z]').hasMatch(source[i])) {
+          data += "_";
+        }
+        data += source[i];
       }
-      data += this[i];
-    }
-    data = "_${data.toLowerCase()}_";
-    data = data.replaceAll("-", "_");
-
-    for (int i = 1; i < data.length; i++) {
-      if (data[i - 1] != "_" || data[i] != "_") {
-        result += data[i];
-      }
+    } else {
+      data = source;
     }
 
-    if (result[result.length - 1] == "_") {
-      result = result.substring(0, result.length - 1);
-    }
-    return result;
+    // 3. Kichik harfga o'tkazib, ketma-ket "_" larni siqamiz va chetlarini kesamiz
+    data = data.toLowerCase().replaceAll(RegExp(r'_+'), '_');
+    if (data.startsWith('_')) data = data.substring(1);
+    if (data.endsWith('_')) data = data.substring(0, data.length - 1);
+
+    return data;
   }
 
   String removeExtraSpaces() => replaceAll(RegExp(r'\s+'), ' ').trim();
 
   bool _hasLowerCase() {
     for (int i = 0; i < length; i++) {
-      if (RegExp(r'^[a-z]').hasMatch(this[i])) {
+      if (RegExp(r'[a-z]').hasMatch(this[i])) {
         return true;
       }
     }

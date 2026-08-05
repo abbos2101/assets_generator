@@ -15,10 +15,7 @@ bool isCheckSafe({
   return true;
 }
 
-String stringPart({
-  required String classFileName,
-  required String className,
-}) {
+String stringPart({required String classFileName, required String className}) {
   return """
 import 'package:easy_localization/easy_localization.dart';
 

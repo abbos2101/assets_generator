@@ -1,11 +1,9 @@
 import 'dart:io';
 import 'string_variable_extensions.dart';
 
-String stringPart({
-  required String classFileName,
-  required String className,
-}) {
-  var string = """
+String stringPart({required String classFileName, required String className}) {
+  var string =
+      """
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -65,8 +63,10 @@ String stringPartOf({
   final stringFiles = <String>[];
   for (var file in files) {
     final fileName = file.uri.pathSegments.last;
+    final dotIndex = fileName.lastIndexOf('.');
     final variableName =
-        fileName.substring(0, fileName.indexOf('.')).toCamelCase();
+        (dotIndex == -1 ? fileName : fileName.substring(0, dotIndex))
+            .toCamelCase();
     buffer.writeln(
       "  static final $variableName = SvgPicture.asset('${file.path}');",
     );

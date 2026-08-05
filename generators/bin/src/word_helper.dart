@@ -27,8 +27,9 @@ class WordHelper {
       classDirectory: json['class_directory'] ?? '',
       classFile: json['class_file'] ?? '',
       className: json['class_name'] ?? '',
-      supportedLocales:
-          ((json['supported_locales'] ?? []) as List).map((e) => '$e').toList(),
+      supportedLocales: ((json['supported_locales'] ?? []) as List)
+          .map((e) => '$e')
+          .toList(),
       targetLocale: json['target_locale'] ?? '',
     );
   }
